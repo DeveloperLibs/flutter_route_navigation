@@ -17,15 +17,12 @@ class DashboardScreen extends StatelessWidget {
           new IconButton(
             icon: new Icon(Icons.account_box,color: Colors.white,),
             onPressed: () {
-
               String userName = "Developer";
               Navigator.push(
                   context,
                   new MaterialPageRoute(
                       builder: (BuildContext context) =>
                       new ProfilesScreen(userName)));
-
-
             },
           )
         ],

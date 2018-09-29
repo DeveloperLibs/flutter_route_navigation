@@ -51,6 +51,9 @@ class _FormState extends State<ProfilesScreen> {
               result.then((result) {
                 setState(() {
                   userName = result as String;
+                  if(userName==null||userName.isEmpty){
+                    userName="developer";
+                  }
                 });
               });
 

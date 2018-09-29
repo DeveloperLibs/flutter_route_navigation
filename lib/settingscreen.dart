@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class SettingScreen extends StatelessWidget {
+  TextEditingController _nameFieldController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.grey,
       appBar: new AppBar(
         leading: new IconButton(
           icon: new Icon(
@@ -38,11 +40,18 @@ class SettingScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            new Padding(
+              padding: EdgeInsets.only(left: 50.0, right: 50.0),
+              child: new TextFormField(
+                maxLength: 32,
+                controller: _nameFieldController,
+              ),
+            ),
             new RaisedButton(
               onPressed: () async {
-                Navigator.pop(context, "Developer Libs");
+                Navigator.pop(context, _nameFieldController.text);
               },
-              child: new Text("Update name"),
+              child: new Text("Send back"),
             )
           ],
         ),
